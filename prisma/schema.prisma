@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Location {
+  id                Int      @id @default(autoincrement())
+  storeCode         String  @unique
+  businessName      String?
+  addressLine1      String?
+  addressLine2      String?
+  addressLine3      String?
+  addressLine4      String?
+  addressLine5      String?
+  subLocality       String?
+  locality          String?
+  administrativeArea String?
+  countryRegion     String?
+  postalCode        String?
+  latitude          Float?
+  longitude         Float?
+  primaryPhone      String?
+  additionalPhones  String?
+  website           String?
+  primaryCategory   String?
+  additionalCategories String?
+  sundayHours       String?
+  mondayHours       String?
+  tuesdayHours      String?
+  wednesdayHours    String?
+  thursdayHours     String?
+  fridayHours       String?
+  saturdayHours     String?
+  specialHours      String?
+  fromTheBusiness   String?
+  openingDate       String?
+  logoPhoto         String?
+  coverPhoto        String?
+  otherPhotos       String?
+  labels            String?
+  adWordsLocationExtensionsPhone String?
+}
